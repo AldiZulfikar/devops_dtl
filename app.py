@@ -1,36 +1,15 @@
 from flask import Flask, render_template, request
-from keras.models import load_model
-from keras.preprocessing import image
 import cv2
-import numpy as np
-import tensorflow as tf
-
 import colorMap
 import codeVis
+from pred import predict
 
 app = Flask(__name__)
 port = 5100
 
-with open('sdp_resnet_model.json', 'r') as json_file:
-    json_savedModel= json_file.read()
-
-model = tf.keras.models.model_from_json(json_savedModel)
-model.load_weights('resnet_model.h5')
-model.compile(optimizer='adam',loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
-
-class_names = ["buggy", "clean"]
-
-def predict(x):
-    image=cv2.imread(x)
-    image_resized= cv2.resize(image, (180,180))
-    image=np.expand_dims(image_resized,axis=0)
-    pred=model.predict(image)
-    output_class=class_names[np.argmax(pred)]
-    return output_class
-
 @app.route("/", methods=['GET', 'POST'])
 def main():
-    return render_template("test.html")
+    return render_template("index.html")
 
 @app.route("/about")
 def about_page():
@@ -58,7 +37,7 @@ def get_output():
 
         # p = predict(img_path)
 
-    return render_template("test.html", prediction = p, img_path = img_path)
+    return render_template("index.html", prediction = p, img_path = img_path)
 
 if __name__ =='__main__':
     app.run(host="0.0.0.0", port=port)

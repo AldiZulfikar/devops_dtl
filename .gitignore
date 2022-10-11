@@ -2,3 +2,4 @@
 lost+found/
 .npm/
 .cache/
+venv/

@@ -1,0 +1,125 @@
+.container {
+	max-width: 960px;
+}
+
+/*
+   * Custom translucent site header
+   */
+
+.site-header {
+	background-color: rgba(0, 0, 0, 0.85);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+	color: #8e8e8e;
+	transition: color 0.15s ease-in-out;
+}
+.site-header a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+/*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+
+.product-device {
+	position: absolute;
+	right: 10%;
+	bottom: -30%;
+	width: 300px;
+	height: 540px;
+	background-color: #333;
+	border-radius: 21px;
+	transform: rotate(30deg);
+}
+
+.product-device::before {
+	position: absolute;
+	top: 10%;
+	right: 10px;
+	bottom: 10%;
+	left: 10px;
+	content: "";
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 5px;
+}
+
+.product-device-2 {
+	top: -25%;
+	right: auto;
+	bottom: 0;
+	left: 5%;
+	background-color: #e5e5e5;
+}
+
+.files input {
+	outline: 2px dashed #92b0b3;
+	outline-offset: -10px;
+	-webkit-transition: outline-offset 0.15s ease-in-out,
+		background-color 0.15s linear;
+	transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+	padding: 120px 0px 85px 35%;
+	text-align: center !important;
+	margin: 0;
+	width: 100% !important;
+}
+.files input:focus {
+	outline: 2px dashed #92b0b3;
+	outline-offset: -10px;
+	-webkit-transition: outline-offset 0.15s ease-in-out,
+		background-color 0.15s linear;
+	transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+	border: 1px solid #92b0b3;
+}
+.files {
+	position: relative;
+}
+.files:after {
+	pointer-events: none;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	width: 50px;
+	right: 0;
+	height: 56px;
+	content: "";
+	background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+	display: block;
+	margin: 0 auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.color input {
+	background-color: #f1f1f1;
+}
+.files:before {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	pointer-events: none;
+	width: 100%;
+	right: 0;
+	height: 57px;
+	content: " or drag it here. ";
+	display: block;
+	margin: 0 auto;
+	color: #2ea591;
+	font-weight: 600;
+	text-transform: capitalize;
+	text-align: center;
+}
+
+/*
+   * Extra utilities
+   */
+
+.flex-equal > * {
+	flex: 1;
+}
+@media (min-width: 768px) {
+	.flex-md-equal > * {
+		flex: 1;
+	}
+}

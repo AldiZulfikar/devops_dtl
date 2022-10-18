@@ -26,7 +26,8 @@ def predict():
             # return jsonify({'error': 'format not supported'})
             return render_template("index.html", prediction = 'Format Not Supported', img_path = 'static/images/not_supported.png')
 
-        fileCode = "static/predict_result/" + file.filename
+        # fileCode = "static/predict_result/" + file.filename
+        fileCode = "/devops-dtl-app/app/static/predict_result/" + file.filename
 
         file.save(fileCode)
 
@@ -46,3 +47,10 @@ def predict():
     except:
         # return jsonify({'error': 'Error during prediction'})
         return render_template("index.html", prediction = 'Error during prediction')
+
+# main driver function
+if __name__ == '__main__':
+ 
+    # run() method of Flask class runs the application
+    # on the local development server.
+    app.run(host="0.0.0.0")

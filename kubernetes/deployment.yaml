@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dtl-app
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: dtl-app
+  template:
+    metadata:
+      labels:
+        app: dtl-app
+    spec:
+      containers:
+        - name: dtl-app
+          image: devops-dtl-app
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "250m"
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+              protocol: TCP

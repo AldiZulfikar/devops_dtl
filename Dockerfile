@@ -6,6 +6,10 @@ RUN apt-get update
 
 RUN apt install -y libgl1-mesa-glx
 
+ENV STATIC_URL /static
+
+ENV STATIC_PATH /static
+
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt

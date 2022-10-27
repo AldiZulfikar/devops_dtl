@@ -8,7 +8,7 @@ RUN apt install -y libgl1-mesa-glx
 
 ENV STATIC_URL /static
 
-ENV STATIC_PATH /static
+ENV STATIC_PATH /devops-dtl-app/app/static
 
 COPY requirements.txt .
 

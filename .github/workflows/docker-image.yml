@@ -26,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: zull123/dtl-dp:latest, zull123/dtl-dp:${{ github.run_number }}
+          tags: zull123/dtl-dp:latest

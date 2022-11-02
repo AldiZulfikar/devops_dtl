@@ -12,7 +12,7 @@ ENV STATIC_PATH /devops-dtl-app/app/static
 
 COPY requirements.txt .
 
-RUN pip3install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY ./app ./app
 COPY ./model ./model

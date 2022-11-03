@@ -40,8 +40,8 @@ config = set_config({
 model = ModelResNet(config.output_size)
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-PATH = "/devops-dtl-app/model/weights_best.pth"
-# PATH = "../model/weights_best.pth"
+# PATH = "/devops-dtl-app/model/weights_best.pth"
+PATH = "../model/weights_best.pth"
 model.load_state_dict(torch.load(PATH, map_location='cpu'))
 model = model.to(device)
 model.eval()

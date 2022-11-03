@@ -45,7 +45,7 @@
 	<body>
 		<main>
 			<div
-				class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+				class="position-relative overflow-hidden p-3 p-md-5 text-center bg-light"
 			>
 				<div class="col-md-5 p-lg-5 mx-auto my-5">
 					<h1 class="display-4 fw-normal">
@@ -98,18 +98,18 @@
 				<div
 					class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
 				>
-					<div class="my-3 p-3">
+					<div class="my-3 p-3 text-dark">
 						<h2 class="display-5">Your Prediction</h2>
 						<p class="lead">This the result of prediction</p>
 					</div>
 					<div
-						class="bg-dark shadow-sm mx-auto"
+						class="bg-light shadow-sm mx-auto"
 						style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
 					>
 						{% if prediction %}
-						<img src={{img_path}} height="80%" class="p-2" />
+						<img src="{{img_path}}" height="75%" class="p-4" />
 						<br />
-						<h2 class="lead text-light btn btn-outline-secondary">
+						<h2 class="lead text-light btn btn-dark">
 							Result: {{prediction}}
 						</h2>
 						{% endif %}
@@ -118,7 +118,7 @@
 			</div>
 		</main>
 
-		<footer class="container py-5">
+		<footer class="container-fluid py-0 bg-dark">
 			<div class="row">
 				<div class="col-12 col-md">
 					<svg
@@ -140,8 +140,8 @@
 							d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
 						/>
 					</svg>
-					<small class="d-block mb-3 text-muted"
-						>&copy; Aldi Zulfikar - 2022</small
+					<small class="d-block mb-4 text-light text-center"
+						>&copy; Copyright by Aldi Zulfikar - 2022</small
 					>
 				</div>
 			</div>

@@ -16,6 +16,10 @@ RUN pip install -r requirements.txt
 
 COPY ./app ./app
 
+RUN rm /devops-dtl-app/app/torch_utils.py
+
+COPY torch_utils.py /devops-dtl-app/app/torch_utils.py
+
 EXPOSE 5000
 
 CMD ["python", "./app/main.py"]

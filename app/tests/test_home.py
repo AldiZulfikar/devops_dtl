@@ -1,11 +1,5 @@
 import pytest
-
 from main import app
-
-# --------
-# Fixtures
-# --------
-
 
 @pytest.fixture()
 def client():

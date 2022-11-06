@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Pipelines
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     name: Build and Testing
     strategy:
       matrix:
-        python-version: [3.8.10]
+        python-version: [3.8.14]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

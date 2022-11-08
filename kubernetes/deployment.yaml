@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         app: sdp-app
-kubect    spec:
+    spec:
       containers:
         - name: sdp-app
           image: zull123/dtl-dp:latest

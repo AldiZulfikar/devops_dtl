@@ -102,4 +102,6 @@ jobs:
           
       - name: 'Deploy the API on OKE'
         run: |
-          ls
+          kubectl apply -f kubernetes/deployment.yaml
+          kubectl get pods
+          kubectl get svc

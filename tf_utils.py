@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import tensorflow as tf
 
-with open('static/model/sdp_resnet_model.json', 'r') as json_file:
+with open('/devops-dtl-app/app/static/model/sdp_resnet_model.json', 'r') as json_file:
     json_savedModel= json_file.read()
 
 model = tf.keras.models.model_from_json(json_savedModel)

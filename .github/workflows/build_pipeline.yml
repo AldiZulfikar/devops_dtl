@@ -104,6 +104,7 @@ jobs:
 
       - name: "Deploy the API on OKE"
         run: |
+          kubectl delete deployment, service sdp-app
           kubectl apply -f kubernetes/deployment.yaml
           kubectl get pods
           kubectl get svc

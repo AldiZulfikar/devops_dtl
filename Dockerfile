@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 
 COPY ./app ./app
 
-RUN rm /devops-dtl-app/app/torch_utils.py
+RUN rm /devops-dtl-app/app/tf_utils.py
 RUN rm /devops-dtl-app/app/main.py
 
 COPY tf_utils.py /devops-dtl-app/app/tf_utils.py

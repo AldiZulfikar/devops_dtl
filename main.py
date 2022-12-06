@@ -27,7 +27,8 @@ def predict():
             # return jsonify({'error': 'format not supported'})
             return render_template("index.html", prediction = 'Format Not Supported', img_path = 'static/images/not_supported.png')
 
-        fileCode = "/devops-dtl-app/app/static/predict_result/" + file.filename
+        # fileCode = "/devops-dtl-app/app/static/predict_result/" + file.filename
+        fileCode = "static/predict_result/" + file.filename
 
         file.save(fileCode)
 

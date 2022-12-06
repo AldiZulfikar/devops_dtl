@@ -6,12 +6,6 @@ on:
   pull_request:
     branches: ["master"]
 
-env:
-  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-  IMAGE_NAME: zull123/dtl-app
-  DEPLOYMENT_NAME: sdp-web-app
-  PORT: 5000
-
 jobs:
   job1:
     name: Build
@@ -105,6 +99,8 @@ jobs:
 
       - name: "Deploy the API on OKE"
         run: |
+          kubectl delete deployment sdp-app
+          kubectl delete service sdp-app
           kubectl apply -f kubernetes/deployment.yaml
           kubectl get pods
           kubectl get svc

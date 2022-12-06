@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from tf_utils import predict
+from tf_utils import preds
 import cv2
 from colorMap import get_new_color_img
 
@@ -38,11 +38,11 @@ def predict():
         cv2.imwrite(img_path, im)
 
     try:
-        p = predict(img_path)
+        p = preds(img_path)
         return render_template("index.html", prediction = p, img_path = 'static/images/predictive.png')
-    except:
+    except Exception as err:
         # return jsonify({'error': 'Error during prediction'})
-        return render_template("index.html", prediction = 'Error during prediction')
+        return render_template("index.html", prediction = err)
 
 if __name__ == '__main__':
 

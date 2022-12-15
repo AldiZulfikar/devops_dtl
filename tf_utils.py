@@ -12,7 +12,7 @@ model.compile(optimizer='adam', loss = tf.keras.losses.BinaryCrossentropy(from_l
 
 class_names = ["Buggy", "Clean"]
 
-def predict(x):
+def preds(x):
     image=cv2.imread(x)
     image_resized= cv2.resize(image, (180,180))
     image=np.expand_dims(image_resized,axis=0)
